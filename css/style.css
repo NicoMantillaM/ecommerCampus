@@ -1,0 +1,230 @@
+@import url(variables.css);
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "EncodeSans-Regular";
+    box-sizing: border-box;
+}
+.header {
+    /* background: red; */
+    padding: var(--space-layout-padding-lr);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+}
+.header__information{
+    /* background: green; */
+}
+.header__information span{
+    font-family: "EncodeSans-Bold";
+}
+.header__login{
+    /* background: violet; */
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.header__login img{
+    width: 100%;
+    /* object-fit: contain; */
+}
+.nav{
+    /* background: red; */
+    padding: var(--space-layout-padding-lr);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.nav__search{
+    /* background: yellow; */
+    position: relative;
+}
+.nav__search input{
+    outline: none;
+    width: 260px;
+    height: 45px;
+    border-radius: 10px;
+    padding-left: 2.5rem;
+    padding-right: 1.5rem;
+    border: 1px solid var(--color-3);
+}
+.search__icon{
+    position: absolute;
+    display: block;
+    bottom: .6rem;
+    left: .8rem;
+    user-select: none;
+    cursor: pointer;
+}
+.nav__filter{
+    background: var(--color-1);
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    position: relative;
+}
+.nav__filter img{
+    width: 20px;
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+.main{
+    padding:var(--space-layout-padding-lr);
+    margin-top: 15px;
+}
+.main__nav {
+    /* background: violet;
+    padding: 10px; */
+}
+.nav__ul{
+    height: 50px;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    overflow-x: scroll;
+}
+.nav__ul li {
+  list-style: none;
+}
+.nav__ul li a {
+    /* background: rgb(255, 122, 34); */
+    width: 105px;
+    height: 35px;
+    font-family: "EncodeSans-Medium";
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px;
+    border-radius: 8px;
+    border: 1px solid var(--color-3);
+    color: var(--color-2);
+    background: var(--color-5);
+}
+
+.nav__ul li a:hover {
+    color: var(--color-2);
+    background: var(--color-2);
+    transition: all 0.1s ease 0.1s;
+    color: var(--color-5);
+}
+.nav__ul li a:hover img {
+    filter: invert(1);
+}
+.footer{
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    padding: var(--space-layout-padding-lr);
+}
+.footer__ul{
+    background: var(--color-2);
+    height: 55px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 0px 0px 50px #ffff;
+}
+.footer__ul li{
+    list-style: none;
+    background: var(--color-1);
+    border-radius: 100%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+.footer__ul li a{
+   display: flex;
+}
+.footer__ul li a img{
+    object-fit: contain;
+}
+.main__article {
+    height: 70vh;
+    margin-top: 15px;
+    padding-bottom:12vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow-y: scroll;
+    
+}
+.main__article section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:48%;
+    /* height:380px; */
+    margin-bottom: 4%
+}
+.main__article section:nth-child(4n+1),
+.main__article section:nth-child(4n+4){
+    height:380px;
+}
+
+.main__article section:nth-child(4n-1){
+    margin-top:-54px;
+}
+
+.section__front__page{
+    position: relative;
+    margin-top: 5px;
+    border-radius: 14px;
+    width: var(--layout-imagen-width);
+    height: var(--layout-imagen-height);
+    overflow: hidden;
+}
+
+.section__front__page img{
+    position: absolute;
+}
+
+.section__front__page img:first-child{
+    width: var(--layout-imagen-width);
+    height: var(--layout-imagen-height);
+   object-fit: cover;
+}
+.section__front__page > img:last-child{
+   top: 10px;
+   right: 10px;
+   background-color: var(--color-1);
+   border-radius: 100%;
+   height: 25px;
+   width: 25px;
+   padding: 5px;
+}
+.main__article section h5,
+.main__article section small{
+    align-self: flex-start;
+}
+.section__price {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+.price__score{
+    display:flex;
+    gap:5px
+}
+
+.main__article section h5{
+    font-family: "EncodeSans-Semibold";
+    color: var(--color-2)
+}
+
+.main__article section small{
+    color: var(--color-3);
+    margin-top:10px
+}
