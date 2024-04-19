@@ -8,6 +8,9 @@
     --space-layout-padding-t: 5px; 
     --layout-imagen-width: 100%;
     --layout-imagen-height:350px;
+
+    --layout-imagen-width-detail:100%;
+    --layout-imagen-height-detail:392px;
 }
 
 @font-face {
