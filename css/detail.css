@@ -138,3 +138,6 @@
 .footer__ul li a img{
     width: 25px;
 }
+.footer__ul li a sub{
+    text-decoration: line-through;
+}
