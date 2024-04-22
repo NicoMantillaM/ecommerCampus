@@ -5,3 +5,60 @@
     font-family: "EncodeSans-Regular";
     box-sizing: border-box;
 }
+.main{
+    /* background: red; */
+    padding: var(--space-layout-padding-lr);
+    margin-top: var(--space-layout-padding-t);
+}
+.main__section {
+    width: 100%;
+    /* background: green; */
+}
+.article__product {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+h5{
+    font-size:25px;
+}
+.product__menu {
+    background: violet; 
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    padding: var(--space-layout-padding-lr);
+    background: var(--color-4);
+    height: 55px;
+    border-radius: 40px;
+}
+
+.footer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: var(--color-5);
+}
