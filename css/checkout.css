@@ -99,6 +99,17 @@
     height: 20px;
     width: 20px;
 }
+.section__shopping{
+    margin-top: 20px;
+}
+.Shopping__tittle{
+    margin-bottom: 15px;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
 .dropdown__button {
     background-color: var(--color-3);
     border-radius: 5px;
@@ -110,11 +121,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.dropdown {
-    position: relative;
-    display: inline-block;
-    width: 100%;
 }
 .shopping__card {
     display: flex;
