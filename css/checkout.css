@@ -192,5 +192,23 @@
     margin-bottom: 15px;
 }
 
+.footer {
+    position: fixed;
+    bottom: 10px;
+    width: 100%;
+    padding: var(--space-layout-padding-lr);
+    background: var(--color-1);
+    height: 55px;
+    border-radius: 40px;
+}
 
-
+.footer a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: var(--color-5);
+    font-family: "EncodeSans-Bold";
+}

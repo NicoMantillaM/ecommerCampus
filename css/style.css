@@ -111,6 +111,7 @@
 .nav__ul li a:hover {
     color: var(--color-2);
     background: var(--color-2);
+    transition: all 0.1s ease 0.1s;
     color: var(--color-5);
 }
 .nav__ul li a:hover img {
