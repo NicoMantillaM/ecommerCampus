@@ -94,7 +94,7 @@
 }
 .nav__ul li a {
     /* background: rgb(255, 122, 34); */
-    width: 105px;
+    width: 125px;
     height: 35px;
     font-family: "EncodeSans-Medium";
     text-decoration: none;
@@ -117,6 +117,13 @@
 .nav__ul li a:hover img {
     filter: invert(1);
 }
+
+.nav__ul li a span{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .footer{
     position: fixed;
     bottom: 10px;
