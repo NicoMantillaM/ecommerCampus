@@ -124,6 +124,7 @@
     text-overflow: ellipsis;
 }
 
+
 .footer{
     position: fixed;
     bottom: 10px;
@@ -197,10 +198,10 @@
     position: absolute;
 }
 
-.section__front__page img:first-child{
+.section__front__page a img:first-child{
     width: var(--layout-imagen-width);
     height: var(--layout-imagen-height);
-   object-fit: cover;
+   object-fit: scale-down;
 }
 .section__front__page > img:last-child{
    top: 10px;
