@@ -4,11 +4,11 @@ export const galleryIndex = (res, category)=>{
     products.forEach((value,index) => {
         plantilla += /*html*/`
         <section>
-           <div class="section__front_page">
+           <div class="section__front__page">
                <a href="views/detail.html?id=${value.asin}">
                    <img src="${value.product_photo}">
                </a>
-               <img src="storage/img/heart.svg">
+               <img src="storage/img/heartWhiteBorder.svg">
            </div>
            <h5>${value.product_title}</h5>
            <small>${category}</small>
