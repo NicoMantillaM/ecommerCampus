@@ -1,4 +1,5 @@
-export const titleProductDetail = async({ data:dataUpdate } = res)=>{
+
+export const titleProductDetail = async ({ data: dataUpdate } = res) => {
     return /*html*/`
         <article class="article__detail">
             <div class="detail__head">
@@ -17,8 +18,8 @@ export const titleProductDetail = async({ data:dataUpdate } = res)=>{
         </article>`;
 }
 
-export const productDetail = async(res)=>{
-    let {data} = res;
+export const productDetail = async (res) => {
+    let { data } = res;
     let {
         category_path,
         about_product,
@@ -30,14 +31,100 @@ export const productDetail = async(res)=>{
         review_aspects,
         ...dataUpdate
     } = data;
-    console.log(dataUpdate);
-    let description = dataUpdate.product_description.slice(0, 165);
-    let description2 = dataUpdate.product_description.slice(166);
+
+    let description = '';
+    let description2 = '';
+    if (dataUpdate.product_description) {
+        description = dataUpdate.product_description.slice(0, 165);
+        description2 = dataUpdate.product_description.slice(166);
+    } else {
+        description = ("There is no description of this product")
+    }
 
     return /*html*/`
     <details>
-        <summary>${(dataUpdate.product_description.length >= 165) ? description+"..." : description}
+        <summary>${(dataUpdate.product_description && dataUpdate.product_description.length >= 165) ? description + "...Read more" : description}
         </summary>
         <p>${description2}</p>
     </details>`;
 }
+
+
+export const productAdded = async (res) => {
+    let plantilla =""
+    res.forEach((element) => {
+        if (element !== null && typeof element === 'string') {
+            const data = JSON.parse(element);
+            console.log(data.status);
+            
+            let info = data.data;
+            console.log(info);
+            if (data.status === 'OK' && data.request_id && info) {
+                console.log(info);
+                
+                plantilla += /*html*/`
+                <article class="details__product">
+                    <div class="product__imagen">
+                        <img src="${info.product_photo}">
+                    </div>
+                    <div class="product__description">
+                        <h3>${(info.product_title).substring(0, 15)}...</h3>
+                        <small>⭐ ${info.product_star_rating ? info.product_star_rating : "No Ratings"}</small>
+                        <span>$${info.product_price}</span>
+                    </div>
+                    <div class="product__custom">
+                    <img src="../storage/img/option.svg">
+                    <div class="product__select">
+                        <img src="../storage/img/minusCheckout.svg" id="btn_minus_checkout">
+                        <span id="span_quantity_checkout">${info.quantity}</span>
+                        <img src="../storage/img/plusCheckout.svg" id="btn_plus_checkout">
+                    </div>
+                </div>
+                </article>
+                `;
+            }
+
+
+
+        }
+        
+    });
+    
+    return plantilla;
+    // let {data} = res;
+    // let {
+    //     category_path,
+    //     about_product,
+    //     product_details,
+    //     product_information,
+    //     product_photos,
+    //     product_variations,
+    //     rating_distribution,
+    //     review_aspects,
+    //     ...dataUpdate
+    // } = data;
+
+    // let quantity = res.quantity || 1;
+
+    // return /*html*/`
+    // <article class="details__product">
+    //     <div class="product__imagen">
+    //         <img src="${dataUpdate.product_photo}">
+    //     </div>
+    //     <div class="product__description">
+    //         <h3>${(dataUpdate.product_title).substring(0, 15)}...</h3>
+    //         <small>⭐ ${dataUpdate.product_star_rating ? dataUpdate.product_star_rating : "No Ratings"}</small>
+    //         <span>$${dataUpdate.product_price}</span>
+    //     </div>
+    //     <div class="product__custom">
+    //     <img src="../storage/img/option.svg">
+    //     <div class="product__select">
+    //         <img src="../storage/img/minusCheckout.svg" id="btn_minus_checkout">
+    //         <span id="span_quantity_checkout">${quantity}</span>
+    //         <img src="../storage/img/plusCheckout.svg" id="btn_plus_checkout">
+    //     </div>
+    // </div>
+    // </article>
+    // `;
+}
+
