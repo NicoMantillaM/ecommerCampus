@@ -25,12 +25,12 @@ export const getAllCategory = async()=>{
 }
 
 export const getAllProductRandom = async({
-    query="computers", 
+    query="zapatos", 
     page=3000, 
-    category_id="computers",
+    category_id="fashion",
     min_price=100, 
     max_price=150,
-    brand=["hp", "asus", "apple"]})=>{
+    brand=["nike", "puma", "adidas"]})=>{
     console.log("Esperando .......");
     page = Math.random()*(page/20);
     page = parseInt(Math.round(page));

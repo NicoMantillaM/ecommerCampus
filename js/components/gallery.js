@@ -39,3 +39,16 @@ export const galleryCategory = ({data: {product_photos}} = res)=>{
             </div>
         </article>`;
 }
+
+
+export const ingreso = ()=>{
+    return /*html*/`
+    <div class="header__information">
+            <p>Hello, Welcome 👋</p>
+            <span>Nicoll Mantilla</span>
+        </div>
+        <div class="header__login">
+            <img src="storage/img/yo.jpeg">
+        </div>
+        `;
+}
